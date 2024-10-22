@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salah_app/screen/home_components/appbar_part.dart';
+import 'package:salah_app/screen/home_components/prayer_card.dart';
 class Home extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,8 @@ class Home extends StatelessWidget{
         child: Column(
           children: [
             SizedBox(height: mdh*0.056,),
-            AppbarPart(mdw, mdh)
+            AppbarPart(mdw, mdh),
+            PrayerCard(mdw, mdh)
           ],
         ),
       ),
