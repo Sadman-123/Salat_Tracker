@@ -36,7 +36,7 @@ class PrayerCard extends StatelessWidget {
                                   () => Text(
                                 "${salat.nextPrayer}",
                                 style: TextStyle(
-                                  fontSize: mdw * 0.1, // Reduced size
+                                  fontSize: mdw * 0.095, // Reduced size
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black87,
                                   overflow: TextOverflow.ellipsis,

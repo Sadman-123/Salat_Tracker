@@ -58,7 +58,7 @@ class SalatTimeController extends GetxController {
         timeUntilNextPrayer.value = _formatTimeDifference(currentTime, ishaTime);
       } else {
         currentPrayer.value = "Isha";
-        nextPrayer.value = "Fajr (next day)";
+        nextPrayer.value = "Fajr";
         timeUntilNextPrayer.value = _formatTimeDifference(currentTime, fajrTime.add(Duration(days: 1)));
       }
     } else {
