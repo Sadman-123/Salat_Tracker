@@ -55,7 +55,6 @@ class Splash2 extends StatelessWidget{
                 child: Image.asset('assets/pic/arrow-right.png',width: mdw*0.24,),
               ),
             ),
-            GetStartedbtn(mdw, mdh)
           ],
         ),
       ),
