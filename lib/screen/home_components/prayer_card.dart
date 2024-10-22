@@ -66,8 +66,8 @@ class PrayerCard extends StatelessWidget {
                          child: Obx(
                                () => Text(
                              "${salat.timeUntilNextPrayer} until ${salat.nextPrayer}",
-                             style: TextStyle(
-                               color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),
+                             style: TextStyle(//0xFF161f28 0xFFf7f6f7
+                               color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFFf7f6f7),
                                fontSize: mdw * 0.038,
                                overflow: TextOverflow.ellipsis,
                              ),

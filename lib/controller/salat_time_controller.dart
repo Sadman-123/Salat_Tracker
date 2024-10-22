@@ -84,9 +84,9 @@ class SalatTimeController extends GetxController {
       final DateTime maghribTime = _parsePrayerTime(dayData['Maghrib'], now);
       final DateTime ishaTime = _parsePrayerTime(dayData['Isha'], now);
       if (currentTime.isBefore(fajrTime)) {
-        currentPrayer.value = "None (before Fajr)";
-        prevPrayer.value="Magrib";
-        prevPrayerCardPic.value="assets/pic/magrib.jpg";
+        currentPrayer.value = "None";
+        prevPrayer.value="Isha";
+        prevPrayerCardPic.value="assets/pic/isha.jpg";
         nextPrayer.value = "Fajr";
         timeUntilNextPrayer.value = _formatTimeDifference(currentTime, fajrTime);
       } else if (currentTime.isBefore(dhuhrTime)) {
