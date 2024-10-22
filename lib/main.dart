@@ -13,7 +13,7 @@ class Main extends StatelessWidget
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/splash2',
+      initialRoute: '/splash',
       getPages: [
         GetPage(name: '/splash', page: () => Splash(),),
         GetPage(name: '/splash2', page: () => Splash2(),),
