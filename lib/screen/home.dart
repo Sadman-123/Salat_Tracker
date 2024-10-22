@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:salah_app/controller/salat_time_controller.dart';
 import 'package:salah_app/screen/home_components/appbar_part.dart';
 import 'package:salah_app/screen/home_components/didyoupraymsg.dart';
+import 'package:salah_app/screen/home_components/otherparts.dart';
 import 'package:salah_app/screen/home_components/prayer_card.dart';
 import 'package:salah_app/screen/home_components/salat_times.dart';
 class Home extends StatelessWidget{
@@ -29,7 +30,9 @@ class Home extends StatelessWidget{
                   AppbarPart(mdw, mdh),
                   PrayerCard(mdw: mdw, mdh: mdh),
                   SalatTimes(mdw: mdw, mdh: mdh),
-                  Didyoupraymsg(mdw: mdw, mdh: mdh)
+                  Didyoupraymsg(mdw: mdw, mdh: mdh),
+                  SizedBox(height: mdh*0.0025,),
+                  Otherparts(mdw: mdw, mdh: mdh)
                 ],
               ),
             );

@@ -16,7 +16,7 @@ class Main extends StatelessWidget
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/splash',
+      initialRoute: '/home',
       getPages: [
         GetPage(name: '/splash', page: () => Splash(),transition: Transition.cupertino),
         GetPage(name: '/splash2', page: () => Splash2(),transition: Transition.cupertino),

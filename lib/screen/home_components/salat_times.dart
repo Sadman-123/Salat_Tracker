@@ -68,6 +68,7 @@ class SalatTimes extends StatelessWidget {
             name,
             style: TextStyle(
               fontSize: mdw * 0.06,
+              fontWeight: FontWeight.bold,
               color: isCurrent ? Colors.black : Colors.grey,
             ),
           ),
