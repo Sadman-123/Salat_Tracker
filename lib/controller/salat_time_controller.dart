@@ -16,6 +16,8 @@ class SalatTimeController extends GetxController {
   RxString todaysDateNum = "".obs;
   RxString isLamic = "".obs;
   RxString CountryState = "".obs;
+  RxInt current_page=0.obs;
+  RxList<dynamic>hadiths=[].obs;
   // salat times
   RxString fajr = "".obs;
   RxString duhur = "".obs;
@@ -26,6 +28,25 @@ class SalatTimeController extends GetxController {
   void onInit() {
     super.onInit();
     fetchPrayerTimes();
+    fetchHadiths();
+  }
+  Future<void> fetchHadiths() async {
+    try {
+      List fetchedHadiths = [];
+      for (int i = 0; i < 3; i++) {
+        var response = await http.get(
+            Uri.parse('https://random-hadith-generator.vercel.app/bukhari/'));
+        if (response.statusCode == 200) {
+          var data = jsonDecode(response.body);
+          fetchedHadiths.add(data);
+        } else {
+          throw Exception('Failed to load hadith');
+        }
+      }
+     hadiths.value=fetchedHadiths;
+    } catch (e) {
+      print('Error fetching hadith: $e');
+    }
   }
   void change_visible()
   {
