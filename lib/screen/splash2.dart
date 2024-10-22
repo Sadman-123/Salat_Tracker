@@ -9,7 +9,6 @@ class Splash2 extends StatelessWidget {
   Widget build(BuildContext context) {
     var mdw = MediaQuery.sizeOf(context).width;
     var mdh = MediaQuery.sizeOf(context).height;
-
     return Scaffold(
       appBar: AppBar(automaticallyImplyLeading: false),
       body: Center(
