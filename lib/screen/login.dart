@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:salah_app/controller/user_controller.dart';
 
 class Login extends StatelessWidget {
+  UserController user=Get.find();
   @override
   Widget build(BuildContext context) {
     var mdw=MediaQuery.sizeOf(context).width;
@@ -23,7 +25,7 @@ class Login extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Login",style: TextStyle(fontSize: mdw*0.24,fontWeight: FontWeight.w800,color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28)),),
+                  Text("Login",style: TextStyle(fontSize: mdw*0.19,fontWeight: FontWeight.w800,color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28)),),
                   Text("Welcome Back!\nReady to Track Your Prayers?",style: TextStyle(fontSize: mdw*0.06,color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28)),),
                 ],
               ),
@@ -71,10 +73,12 @@ class Login extends StatelessWidget {
                         ),
                       ),
                     ),
+                  controller: user.loginmail,
                   ),
                   SizedBox(height: mdh*0.02),
                   TextFormField(
                     obscureText: true,
+                    controller: user.loginpass,
                     decoration: InputDecoration(
                       hintText: "Password",
                       filled: true,
@@ -107,7 +111,9 @@ class Login extends StatelessWidget {
                   SizedBox(height: mdh*0.02),
                   Container(
                     child: InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        Get.toNamed('/register');
+                      },
                       child: RichText(
                         text: TextSpan(
                           style: TextStyle(color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),fontSize: mdw*0.042),

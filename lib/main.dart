@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:salah_app/controller/salat_time_controller.dart';
+import 'package:salah_app/controller/user_controller.dart';
 import 'package:salah_app/screen/home.dart';
 import 'package:salah_app/screen/login.dart';
 import 'package:salah_app/screen/register.dart';
@@ -10,6 +11,7 @@ import 'package:salah_app/screen/splash3.dart';
 void main()
 {
   Get.put(SalatTimeController());
+  Get.put(UserController());
   runApp(Main());
 }
 class Main extends StatelessWidget
@@ -31,7 +33,7 @@ class Main extends StatelessWidget
       ),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      initialRoute: '/register',
+      initialRoute: '/login',
       getPages: [
         GetPage(name: '/splash', page: () => Splash(),transition: Transition.cupertino),
         GetPage(name: '/splash2', page: () => Splash2(),transition: Transition.cupertino),

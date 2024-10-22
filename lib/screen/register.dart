@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:salah_app/controller/user_controller.dart';
 class Register extends StatelessWidget{
+  UserController user=Get.find();
   @override
   Widget build(BuildContext context) {
     var mdw=MediaQuery.sizeOf(context).width;
@@ -70,6 +72,7 @@ class Register extends StatelessWidget{
                         ),
                       ),
                     ),
+                    controller: user.regemail,
                   ),
                   SizedBox(height: mdh*0.02),
                   TextFormField(
@@ -100,13 +103,16 @@ class Register extends StatelessWidget{
                         ),
                       ),
                     ),
+                    controller: user.regpass,
                   ),
                   SizedBox(height: mdh*0.02),
                   Login_Btn(mdw, mdh),
                   SizedBox(height: mdh*0.02),
                   Container(
                     child: InkWell(
-                      onTap: (){},
+                      onTap: (){
+                        Get.toNamed('/login');
+                      },
                       child: RichText(
                         text: TextSpan(
                             style: TextStyle(color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),fontSize: mdw*0.042),
