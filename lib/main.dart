@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:salah_app/controller/salat_time_controller.dart';
 import 'package:salah_app/screen/home.dart';
 import 'package:salah_app/screen/splash.dart';
 import 'package:salah_app/screen/splash2.dart';
 import 'package:salah_app/screen/splash3.dart';
 void main()
 {
+  Get.put(SalatTimeController());
   runApp(Main());
 }
 class Main extends StatelessWidget

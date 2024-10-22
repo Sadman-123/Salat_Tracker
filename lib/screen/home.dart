@@ -13,7 +13,7 @@ class Home extends StatelessWidget{
           children: [
             SizedBox(height: mdh*0.056,),
             AppbarPart(mdw, mdh),
-            PrayerCard(mdw, mdh)
+            PrayerCard(mdw: mdw, mdh: mdh)
           ],
         ),
       ),
