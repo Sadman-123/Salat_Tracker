@@ -41,6 +41,7 @@ class Home extends StatelessWidget {
        }),
      ),
       bottomNavigationBar: NavigationBar(
+        backgroundColor: Get.isDarkMode?Color(0xFF142845):Color(0xFFf7f6f7),
         destinations: [
           NavigationDestination(icon: Icon(Icons.home), label: "Home"),
           NavigationDestination(icon: Icon(Icons.track_changes), label: "Tracker"),

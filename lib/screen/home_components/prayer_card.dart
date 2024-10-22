@@ -8,11 +8,12 @@ class PrayerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Get.isDarkMode?Color(0xFF161f28):Color(0xFFf7f6f7),
       elevation: 5,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
       ),
-      shadowColor: Colors.grey.withOpacity(0.4),
+      shadowColor: Get.isDarkMode?Colors.black.withOpacity(0.4):Colors.white.withOpacity(0.4),
       child: Padding(
         padding: EdgeInsets.all(mdw * 0.02),
        child: Container(
@@ -35,8 +36,8 @@ class PrayerCard extends StatelessWidget {
                                "${salat.currentPrayer}",
                                style: TextStyle(
                                  fontSize: mdw * 0.095, // Reduced size
-                                 fontWeight: FontWeight.bold,
-                                 color: Colors.black87,
+                                 fontWeight: FontWeight.bold,//0xFF161f28 0xFFf7f6f7
+                                 color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),
                                  overflow: TextOverflow.ellipsis,
                                ),
                                softWrap: false,
@@ -66,7 +67,7 @@ class PrayerCard extends StatelessWidget {
                                () => Text(
                              "${salat.timeUntilNextPrayer} until ${salat.nextPrayer}",
                              style: TextStyle(
-                               color: Color(0xFFf7f7f6),
+                               color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),
                                fontSize: mdw * 0.038,
                                overflow: TextOverflow.ellipsis,
                              ),
@@ -82,14 +83,14 @@ class PrayerCard extends StatelessWidget {
                            "Suhur: 4:27 AM",
                            style: TextStyle(
                              fontSize: mdw * 0.05, // Adjusted font size
-                             color: Colors.black54,
+                             color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),
                            ),
                          ),
                          Text(
                            "Iftar: 06:01 PM", // Fixed Iftar time format
                            style: TextStyle(
                              fontSize: mdw * 0.05, // Adjusted font size
-                             color: Colors.black54,
+                             color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),
                            ),
                          ),
                        ],
@@ -115,14 +116,14 @@ class PrayerCard extends StatelessWidget {
                            style: TextStyle(
                              fontSize: mdw * 0.06,
                              fontWeight: FontWeight.bold,
-                             color: Colors.black87,
+                             color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),
                            ),
                          ),),
                          Obx(()=>Text(
                            "(${salat.todaysDateNum})",
                            style: TextStyle(
-                             fontSize: mdw * 0.035,
-                             color: Colors.grey[600],
+                             fontSize: mdw * 0.035,//grey[600]
+                             color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),
                            ),
                          ),)
                        ],
@@ -131,7 +132,7 @@ class PrayerCard extends StatelessWidget {
                        "${salat.isLamic}",
                        style: TextStyle(
                          fontSize: mdw * 0.04,
-                         color: Colors.black87,
+                         color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),
                        ),
                        overflow: TextOverflow.ellipsis,
                        maxLines: 1,
@@ -140,7 +141,7 @@ class PrayerCard extends StatelessWidget {
                        "${salat.CountryState}",
                        style: TextStyle(
                          fontSize: mdw * 0.04,
-                         color: Colors.black87,
+                         color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),
                          overflow: TextOverflow.ellipsis,
                        ),
                      ),)

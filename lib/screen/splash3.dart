@@ -8,7 +8,7 @@ class Splash3 extends StatelessWidget{
     var mdw=MediaQuery.sizeOf(context).width;
     var mdh=MediaQuery.sizeOf(context).height;
     return Scaffold(
-      appBar: AppBar(automaticallyImplyLeading: false,),
+      appBar: AppBar(automaticallyImplyLeading: false,backgroundColor: Get.isDarkMode?Color(0xFF161f28):Color(0xFFf7f6f7),),
       body: Center(
         child: Column(
           children: [

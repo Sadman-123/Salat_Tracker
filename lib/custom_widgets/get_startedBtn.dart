@@ -19,7 +19,7 @@ class GetStartedbtn extends StatelessWidget{
           child: Text("Get Started",style: get_started_btn(mdw, mdh),),
         ),
         decoration: BoxDecoration(
-            color: Color(0xFF131820),
+            color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),
             borderRadius: BorderRadius.circular(24)
         ),
       ),

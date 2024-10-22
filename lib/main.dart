@@ -15,6 +15,19 @@ class Main extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      theme: ThemeData(
+        brightness: Brightness.light,
+        scaffoldBackgroundColor: Color(0xFFf7f6f7),
+      ),
+      darkTheme: ThemeData(
+        scaffoldBackgroundColor: Color(0xFF161f28),
+        brightness: Brightness.dark,
+        textTheme: Theme.of(context).textTheme.apply(
+          bodyColor: Colors.white,
+          displayColor: Colors.white,
+        ),
+      ),
+      themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
       initialRoute: '/splash',
       getPages: [

@@ -16,7 +16,6 @@ class Otherparts extends StatelessWidget{
             OtherCard(mdw, mdh, "assets/pic/pray.png", "Dua"),
             OtherCard(mdw, mdh, "assets/pic/beads.png", "Tasbih"),
             OtherCard(mdw, mdh, "assets/pic/qibla.png", "Qibla")
-
           ],
         ),
       ),

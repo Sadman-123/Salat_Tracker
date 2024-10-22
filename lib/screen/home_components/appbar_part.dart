@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 Widget AppbarPart(double mdw,double mdh) {
   return Container(
     height: 100,
     width: double.infinity,
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
+      children: [//0.068
         Container(
-          child: Image.asset("assets/pic/sujud.png",height: mdh*0.068,),
+          child: Get.isDarkMode?Image.asset("assets/pic/sujud2.png",height: mdh*0.068,):Image.asset("assets/pic/sujud.png",height: mdh*0.068,),
         ),
         Container(
           width: mdw*0.13,

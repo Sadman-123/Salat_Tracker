@@ -8,7 +8,7 @@ Widget OtherCard(double mdw,double mdh,String icon,String txt){
           child: Image.asset("${icon}",width: mdw*0.10,),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
-              color: Color(0xFF152945)
+              color: Color(0xFF142845)
           ),
           padding: EdgeInsets.all(10),
         ),

@@ -34,7 +34,7 @@ class Hadithcard extends StatelessWidget {
               effect: WormEffect(
                 dotHeight: 10,
                 dotWidth: 10,
-                activeDotColor: Color(0xFF152945),
+                activeDotColor: Color(0xFF142845),
                 dotColor: Colors.grey,
               ),
             ),

@@ -12,7 +12,9 @@ class Splash2 extends StatelessWidget {
     var mdw = MediaQuery.sizeOf(context).width;
     var mdh = MediaQuery.sizeOf(context).height;
     return Scaffold(
-      appBar: AppBar(automaticallyImplyLeading: false),
+      appBar: AppBar(automaticallyImplyLeading: false,
+          backgroundColor: Get.isDarkMode?Color(0xFF161f28):Color(0xFFf7f6f7),
+      ),
       body: Center(
         child: Column(
           children: [
@@ -56,7 +58,7 @@ class Splash2 extends StatelessWidget {
                 await _handlePermissions();
               },
               borderRadius: BorderRadius.circular(50),
-              child: Image.asset('assets/pic/arrow-right.png', width: mdw * 0.24),
+              child: Get.isDarkMode?Image.asset('assets/pic/next.png',width: mdw*0.24,):Image.asset('assets/pic/arrow-right.png',width: mdw*0.24,),
             ),
           ],
         ),
