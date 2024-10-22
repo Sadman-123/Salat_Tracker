@@ -32,7 +32,7 @@ class PrayerCard extends StatelessWidget {
                          Expanded(
                            child: Obx(
                                  () => Text(
-                               "${salat.nextPrayer}",
+                               "${salat.currentPrayer}",
                                style: TextStyle(
                                  fontSize: mdw * 0.095, // Reduced size
                                  fontWeight: FontWeight.bold,

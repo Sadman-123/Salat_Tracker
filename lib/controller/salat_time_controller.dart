@@ -11,7 +11,6 @@ class SalatTimeController extends GetxController {
   RxString todaysDateNum = "".obs;
   RxString isLamic = "".obs;
   RxString CountryState = "".obs;
-
   // salat times
   RxString fajr = "".obs;
   RxString duhur = "".obs;
