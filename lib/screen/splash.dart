@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:salah_app/style/style.dart';
+import 'package:get/get.dart';
 class Splash extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,9 @@ class Splash extends StatelessWidget{
             SizedBox(height: mdh*0.24,),
             Container(
               child: InkWell(
-                onTap: (){},
+                onTap: (){
+                  Get.toNamed('/splash2');
+                },
                 borderRadius: BorderRadius.circular(50),
                 child: Image.asset('assets/pic/arrow-right.png',width: mdw*0.24,),
               ),

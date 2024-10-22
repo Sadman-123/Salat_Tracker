@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:salah_app/custom_widgets/get_startedBtn.dart';
 import 'package:salah_app/style/style.dart';
+import 'package:get/get.dart';
 class Splash3 extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     var mdw=MediaQuery.sizeOf(context).width;
     var mdh=MediaQuery.sizeOf(context).height;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(automaticallyImplyLeading: false,),
       body: Center(
         child: Column(
           children: [
@@ -40,9 +41,9 @@ class Splash3 extends StatelessWidget{
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Enhance Your Spiritual Practice",style: TextStyle(fontSize: mdw*0.058,fontWeight: FontWeight.bold),),
+                  Text("Enhance Your Spiritual Practice",style: splash3_txt1(mdw, mdh),),
                   SizedBox(height: mdh*0.002,),
-                  Text("Also helps you incorporate tasbih and other daily \nislamic rituals into your routine.",style: TextStyle(fontSize: mdw*0.036),)
+                  Text("Also helps you incorporate tasbih and other daily \nislamic rituals into your routine.",style: splash3_txt2(mdw, mdh),)
                 ],
               ),
             ),

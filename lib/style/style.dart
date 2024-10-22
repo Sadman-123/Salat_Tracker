@@ -10,3 +10,11 @@ TextStyle splash_txt2(double mdw,double mdh)
 TextStyle get_started_btn(double mdw,double mdh){
   return TextStyle(color: Color(0xFFfcfcfc),fontSize: mdw*0.049,letterSpacing: 1.2,fontWeight: FontWeight.w500);
 }
+TextStyle splash3_txt1(double mdw,double mdh)
+{
+  return TextStyle(fontSize: mdw*0.058,fontWeight: FontWeight.bold);
+}
+TextStyle splash3_txt2(double mdw,double mdh)
+{
+  return TextStyle(fontSize: mdw*0.036);
+}

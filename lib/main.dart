@@ -15,9 +15,9 @@ class Main extends StatelessWidget
       debugShowCheckedModeBanner: false,
       initialRoute: '/splash',
       getPages: [
-        GetPage(name: '/splash', page: () => Splash(),),
-        GetPage(name: '/splash2', page: () => Splash2(),),
-        GetPage(name: '/splash3', page: () => Splash3(),)
+        GetPage(name: '/splash', page: () => Splash(),transition: Transition.cupertino),
+        GetPage(name: '/splash2', page: () => Splash2(),transition: Transition.cupertino),
+        GetPage(name: '/splash3', page: () => Splash3(),transition: Transition.cupertino)
       ],
     );
   }
