@@ -60,8 +60,8 @@ class SalatTimeController extends GetxController {
   Future<void> fetchPrayerTimes() async {
     isLoading.value = true;
     final DateTime now = DateTime.now();
-    //final String apiUrl = 'https://api.aladhan.com/v1/calendar/${now.year}/${now.month}?latitude=${lang}&longitude=${long}&method=2';
-    final String apiUrl = 'https://api.aladhan.com/v1/calendar/${now.year}/${now.month}?latitude=23.8103&longitude=90.4125&method=2';
+    final String apiUrl = 'https://api.aladhan.com/v1/calendar/${now.year}/${now.month}?latitude=${lang}&longitude=${long}&method=2';
+    //final String apiUrl = 'https://api.aladhan.com/v1/calendar/${now.year}/${now.month}?latitude=23.8103&longitude=90.4125&method=2';
     final response = await http.get(Uri.parse(apiUrl));
     if (response.statusCode == 200) {
       isLoading.value = false;
