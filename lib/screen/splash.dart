@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:salah_app/style/style.dart';
 class Splash extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
@@ -16,9 +17,9 @@ class Splash extends StatelessWidget{
             Container(
               child: Column(
                 children: [
-                  Text("Welcome to Salah Tracker App",style: TextStyle(fontSize: mdw*0.064,fontWeight: FontWeight.w900),),
+                  Text("Welcome to Salah Tracker App",style:splash_txt1(mdw, mdh),),
                   SizedBox(height: mdh*0.0013,),
-                  Text("Track,Reflect and Elevate your Spiritual Journey",style: TextStyle(fontSize: mdw*0.037,fontStyle: FontStyle.italic,color: Colors.black87),)
+                  Text("Track,Reflect and Elevate your Spiritual Journey",style: splash_txt2(mdw, mdh),)
                 ],
               ),
             ),
