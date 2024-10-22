@@ -8,6 +8,8 @@ class SalatTimeController extends GetxController {
   RxString long="".obs;
   RxString currentPrayer = "".obs;
   RxString nextPrayer = "".obs;
+  RxString prevPrayer="".obs;
+  RxString prevPrayerCardPic="".obs;
   RxString timeUntilNextPrayer = "".obs;
   RxString todaysDate = "".obs;
   RxString todaysDateNum = "".obs;
@@ -57,26 +59,38 @@ class SalatTimeController extends GetxController {
       final DateTime ishaTime = _parsePrayerTime(dayData['Isha'], now);
       if (currentTime.isBefore(fajrTime)) {
         currentPrayer.value = "None (before Fajr)";
+        prevPrayer.value="Magrib";
+        prevPrayerCardPic.value="assets/pic/magrib.jpg";
         nextPrayer.value = "Fajr";
         timeUntilNextPrayer.value = _formatTimeDifference(currentTime, fajrTime);
       } else if (currentTime.isBefore(dhuhrTime)) {
         currentPrayer.value = "Fajr";
+        prevPrayer.value="Isha";
+        prevPrayerCardPic.value="assets/pic/isha.jpg";
         nextPrayer.value = "Dhuhr";
         timeUntilNextPrayer.value = _formatTimeDifference(currentTime, dhuhrTime);
       } else if (currentTime.isBefore(asrTime)) {
         currentPrayer.value = "Dhuhr";
+        prevPrayer.value="Fajr";
+        prevPrayerCardPic.value="assets/pic/fazr.jpg";
         nextPrayer.value = "Asr";
         timeUntilNextPrayer.value = _formatTimeDifference(currentTime, asrTime);
       } else if (currentTime.isBefore(maghribTime)) {
         currentPrayer.value = "Asr";
+        prevPrayer.value="Dhuhr";
+        prevPrayerCardPic.value="assets/pic/dhuhur.jpg";
         nextPrayer.value = "Maghrib";
         timeUntilNextPrayer.value = _formatTimeDifference(currentTime, maghribTime);
       } else if (currentTime.isBefore(ishaTime)) {
         currentPrayer.value = "Maghrib";
+        prevPrayer.value="Asr";
+        prevPrayerCardPic.value="assets/pic/asr.jpg";
         nextPrayer.value = "Isha";
         timeUntilNextPrayer.value = _formatTimeDifference(currentTime, ishaTime);
       } else {
         currentPrayer.value = "Isha";
+        prevPrayer.value="Magrib";
+        prevPrayerCardPic.value="assets/pic/magrib.jpg";
         nextPrayer.value = "Fajr";
         timeUntilNextPrayer.value = _formatTimeDifference(currentTime, fajrTime.add(Duration(days: 1)));
       }

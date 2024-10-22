@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:salah_app/controller/salat_time_controller.dart';
 class Didyoupraymsg extends StatelessWidget{
+  SalatTimeController salat=Get.find();
   final double mdw,mdh;
    Didyoupraymsg({super.key, required this.mdw, required this.mdh});
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Container(
-          height: mdh * 0.50,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/pic/dhuhur.jpg"),
-              fit: BoxFit.cover,
-            ),
-            borderRadius: BorderRadius.circular(20),
-          ),
-        ),
+       Obx(()=> Container(
+         height: mdh * 0.50,
+         decoration: BoxDecoration(
+           image: DecorationImage(
+             image: AssetImage("${salat.prevPrayerCardPic}"),
+             fit: BoxFit.cover,
+           ),
+           borderRadius: BorderRadius.circular(20),
+         ),
+       ),),
         Positioned(
           bottom: 250,
           left: 20,
@@ -25,10 +28,10 @@ class Didyoupraymsg extends StatelessWidget{
                 "Did you Pray",
                 style: TextStyle(fontSize: mdw * 0.054, color: Colors.white),
               ),
-              Text(
-                "Asr",
+              Obx(()=>Text(
+                "${salat.prevPrayer}",
                 style: TextStyle(fontSize: mdw * 0.172, color: Colors.white),
-              ),
+              ),)
             ],
           ),
         ),
