@@ -48,7 +48,7 @@ class Splash3 extends StatelessWidget{
               ),
             ),
             SizedBox(height: mdh*0.082,),
-            GetStartedbtn(mdw, mdh)
+            GetStartedbtn(mdw: mdw, mdh: mdh)
           ],
         ),
       ),

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:salah_app/controller/salat_time_controller.dart';
 import 'package:salah_app/style/style.dart';
 
 class Splash2 extends StatelessWidget {
+  SalatTimeController salat=Get.find();
   @override
   Widget build(BuildContext context) {
     var mdw = MediaQuery.sizeOf(context).width;
@@ -76,6 +78,8 @@ class Splash2 extends StatelessWidget {
       }
     }
     Position position = await Geolocator.getCurrentPosition();
+    Get.toNamed('/splash3');
+    salat.getLang(position.latitude.toString(),position.longitude.toString());
     print("Current position: ${position}");
   }
 }

@@ -4,6 +4,8 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 class SalatTimeController extends GetxController {
   RxBool isLoading = false.obs;
+  RxString lang="".obs;
+  RxString long="".obs;
   RxString currentPrayer = "".obs;
   RxString nextPrayer = "".obs;
   RxString timeUntilNextPrayer = "".obs;
@@ -22,11 +24,16 @@ class SalatTimeController extends GetxController {
     super.onInit();
     fetchPrayerTimes();
   }
+  void getLang(String x,String y)
+  {
+    lang.value=x;
+    long.value=y;
+  }
   Future<void> fetchPrayerTimes() async {
     isLoading.value = true;
     final DateTime now = DateTime.now();
     final String apiUrl =
-        'https://api.aladhan.com/v1/calendar/${now.year}/${now.month}?latitude=23.8103&longitude=90.4125&method=2';
+        'https://api.aladhan.com/v1/calendar/${now.year}/${now.month}?latitude=${lang}&longitude=${long}&method=2';
     final response = await http.get(Uri.parse(apiUrl));
     if (response.statusCode == 200) {
       isLoading.value = false;
