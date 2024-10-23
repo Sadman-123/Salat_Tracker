@@ -33,7 +33,7 @@ class Main extends StatelessWidget
       ),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      initialRoute: '/login',
+      initialRoute: '/splash',
       getPages: [
         GetPage(name: '/splash', page: () => Splash(),transition: Transition.cupertino),
         GetPage(name: '/splash2', page: () => Splash2(),transition: Transition.cupertino),
