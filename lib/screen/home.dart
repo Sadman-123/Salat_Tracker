@@ -40,6 +40,21 @@ class Home extends StatelessWidget {
          }
        }),
      ),
+      floatingActionButton: FloatingActionButton(//0xFF142845
+        backgroundColor: Get.isDarkMode?Color(0xFF142845):Color(0xFFc9cfd6),
+        onPressed: () async {
+          DateTime? selectedDate = await showDatePicker(
+            context: context,
+            initialDate: DateTime.now(),
+            firstDate: DateTime(2000),
+            lastDate: DateTime(2101),
+          );
+          if (selectedDate != null) {
+            salat.fetchPrayerTimesForSpecificDate(selectedDate);
+          }
+        },
+        child: Icon(Icons.date_range,color: Get.isDarkMode?Color(0xFFf7f6f7):Color(0xFF161f28),),
+      ),
       bottomNavigationBar: NavigationBar(
         backgroundColor: Get.isDarkMode?Color(0xFF142845):Color(0xFFf7f6f7),
         destinations: [

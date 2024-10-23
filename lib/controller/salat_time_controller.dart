@@ -124,6 +124,29 @@ class SalatTimeController extends GetxController {
       throw Exception('Failed to load prayer times');
     }
   }
+  Future<void> fetchPrayerTimesForSpecificDate(DateTime selectedDate) async {
+    isLoading.value = true;
+    final String apiUrl = 'https://api.aladhan.com/v1/calendar/${selectedDate.year}/${selectedDate.month}?latitude=${lang}&longitude=${long}&method=2';
+
+    final response = await http.get(Uri.parse(apiUrl));
+    if (response.statusCode == 200) {
+      isLoading.value = false;
+      final data = json.decode(response.body);
+      final dayData = data['data'][selectedDate.day - 1]['timings'];
+      var xx = data['data'][selectedDate.day - 1]['meta']['timezone'];
+      CountryState.value = xx.toString().split('/')[1];
+      todaysDateNum.value = data['data'][selectedDate.day - 1]['date']['gregorian']['date'];
+      isLamic.value = data['data'][selectedDate.day - 1]['date']['hijri']['month']['en'];
+      todaysDate.value = data['data'][selectedDate.day - 1]['date']['gregorian']['weekday']['en'];
+      fajr.value = _formatTime(dayData['Fajr']);
+      duhur.value = _formatTime(dayData['Dhuhr']);
+      asr.value = _formatTime(dayData['Asr']);
+      margib.value = _formatTime(dayData['Maghrib']);
+      isha.value = _formatTime(dayData['Isha']);
+    } else {
+      throw Exception('Failed to load prayer times');
+    }
+  }
   DateTime _parsePrayerTime(String timeString, DateTime referenceDate) {
     final DateFormat dateFormat = DateFormat('HH:mm');
     final DateTime parsedTime = dateFormat.parse(timeString);
