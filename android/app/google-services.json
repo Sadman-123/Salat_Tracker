@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "812334187946",
+    "project_id": "salat26e",
+    "storage_bucket": "salat26e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812334187946:android:0891582185d8bebcf9d7d3",
+        "android_client_info": {
+          "package_name": "com.example.salah_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvgcMph40Rumspa9SKi9A9bRdUaNxzwcM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
