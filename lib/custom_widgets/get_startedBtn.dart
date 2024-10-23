@@ -10,7 +10,8 @@ class GetStartedbtn extends StatelessWidget{
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (){
-        salat.fetchPrayerTimes().then((_)=>Get.toNamed('/login'));
+        salat.fetchPrayerTimes();
+        Get.toNamed('/login');
       },
       child: Container(
         width: mdw*0.8,

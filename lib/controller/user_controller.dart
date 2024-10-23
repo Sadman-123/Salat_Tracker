@@ -44,6 +44,7 @@ class UserController extends GetxController{
           password: loginpass.text,
         );
         custom_Toast("Login Successfully", true);
+        Get.toNamed('/home');
         clear_fields();
       } on FirebaseAuthException catch (e) {
         String msg = "";
