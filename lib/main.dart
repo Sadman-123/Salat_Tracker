@@ -1,17 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:salah_app/controller/salat_time_controller.dart';
 import 'package:salah_app/controller/user_controller.dart';
+import 'package:salah_app/firebase_options.dart';
 import 'package:salah_app/screen/home.dart';
 import 'package:salah_app/screen/login.dart';
 import 'package:salah_app/screen/register.dart';
 import 'package:salah_app/screen/splash.dart';
 import 'package:salah_app/screen/splash2.dart';
 import 'package:salah_app/screen/splash3.dart';
-void main()
+Future<void> main()async
 {
   Get.put(SalatTimeController());
   Get.put(UserController());
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(Main());
 }
 class Main extends StatelessWidget
