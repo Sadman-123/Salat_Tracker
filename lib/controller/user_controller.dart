@@ -7,34 +7,59 @@ class UserController extends GetxController{
   TextEditingController loginpass=TextEditingController();
   TextEditingController regemail=TextEditingController();
   TextEditingController regpass=TextEditingController();
-  Future<void> signup()async
-  {
-   if(regemail.text.isEmpty || regpass.text.isEmpty)
-     {
-       custom_Toast("Please Fill Every Fields", false);
-       return;
-     }
-   else{
-     try{
-       await FirebaseAuth.instance.createUserWithEmailAndPassword(email: regemail.text, password: regpass.text);
-       custom_Toast("Created Successfully",true);
-       clear_fields();
-     }on FirebaseAuthException catch(e)
-     {
-       String msg="";
-       if(e.code=='weak-password'){
-         msg="Weak Password";
-       }
-       else if(e.code=='email-already-in-use'){
-         msg="Account Exists!!";
-       }
-       custom_Toast(msg,false);
-       clear_fields();
-     }
-     catch(e){
-       print(e);
-     }
-   }
+  Future<void> signup() async {
+    if (regemail.text.isEmpty || regpass.text.isEmpty) {
+      custom_Toast("Please Fill Every Fields", false);
+      return;
+    } else {
+      try {
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: regemail.text,
+          password: regpass.text,
+        );
+        custom_Toast("Created Successfully", true);
+        clear_fields();
+      } on FirebaseAuthException catch (e) {
+        String msg = "";
+        if (e.code == 'weak-password') {
+          msg = "Password should be at least 6 characters.";
+        } else if (e.code == 'email-already-in-use') {
+          msg = "An account already exists with this email.";
+        }
+        custom_Toast(msg, false);
+        clear_fields();
+      } catch (e) {
+        print(e);
+      }
+    }
+  }
+  Future<void> signin() async {
+    if (loginmail.text.isEmpty || loginpass.text.isEmpty) {
+      custom_Toast("Please Fill Every Fields", false);
+      return;
+    } else {
+      try {
+        await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: loginmail.text,
+          password: loginpass.text,
+        );
+        custom_Toast("Login Successfully", true);
+        clear_fields();
+      } on FirebaseAuthException catch (e) {
+        String msg = "";
+        if (e.code == 'user-not-found') {
+          msg = "No user found for that email.";
+        } else if (e.code == 'wrong-password') {
+          msg = "Incorrect password. Please try again.";
+        } else {
+          msg = "Error signing in. Please try again.";
+        }
+        custom_Toast(msg, false);
+        clear_fields();
+      } catch (e) {
+        print(e);
+      }
+    }
   }
   void custom_Toast(String msg,bool vl)
   {
