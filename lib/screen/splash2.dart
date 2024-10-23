@@ -66,22 +66,30 @@ class Splash2 extends StatelessWidget {
     );
   }
   Future<void> _handlePermissions() async {
+    Get.dialog(
+      Center(child: CircularProgressIndicator()),
+      barrierDismissible: false,
+    );
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {
+      Get.back();
       return Future.error("Location services are disabled.");
     }
     LocationPermission permission = await Geolocator.checkPermission();
     if (permission == LocationPermission.denied) {
       permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
+        Get.back();
         return Future.error("Permission denied");
       } else if (permission == LocationPermission.deniedForever) {
+        Get.back();
         return Future.error("Permission permanently denied");
       }
     }
     Position position = await Geolocator.getCurrentPosition();
-    Get.toNamed('/splash3');
-    salat.getLang(position.latitude.toString(),position.longitude.toString());
+    salat.getLang(position.latitude.toString(), position.longitude.toString());
     print("Current position: ${position}");
+    Get.back();
+    Get.toNamed('/splash3');
   }
 }
