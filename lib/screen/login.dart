@@ -137,6 +137,7 @@ class Login extends StatelessWidget {
   Widget Login_Btn(double mdw,double mdh)
   {
     return InkWell(
+      onTap: (){Get.toNamed('/home');},
       child: Container(
         height: mdh*0.057,
         width: mdw*0.45,
